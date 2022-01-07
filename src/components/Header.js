@@ -17,7 +17,7 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
             {/* Search Bar */}
             <HeaderSearch>
                 <SearchIcon />
-                <input placeholder='Search for Scrims' />
+                <input placeholder='Search for Scrims!' />
             </HeaderSearch>
 
             {/* Right Side */}
@@ -61,6 +61,11 @@ const HeaderSearch = styled.div`
         min-width: 30vw;
         outline: 0;
         color: white;
+    }
+    > ::placeholder {
+        color: lightgreen;
+        font-weight: 300;
+        opacity: .4;
     }
 `;
 
