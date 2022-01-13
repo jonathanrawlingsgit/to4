@@ -6,7 +6,7 @@ import firebase from 'firebase/app'
 import { useState } from 'react'
 
 
-function ChatInput({channelName, channelId}) {
+function ChatInput({channelName, channelId, chatRef}) {
     const [input, setInput] = useState("");
     
 
@@ -23,6 +23,10 @@ function ChatInput({channelName, channelId}) {
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             user: 'SeVeRiNcE',
             userImage: 'https://assets1.ignimgs.com/2020/07/31/halo-infinite-box-art-blogroll-1595423634469-1596224358515_160w.jpg?width=1280',
+        });
+
+        chatRef.current.scrollIntoView({
+            behavior: "smooth",
         });
 
         setInput("");
@@ -47,6 +51,7 @@ export default ChatInput;
 
 const ChatInputContainer = styled.div`
     border-radius: 20px;
+    
 
     > form {
         position: relative;
