@@ -14,11 +14,14 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import SidebarOption from './SidebarOption';
 import AddIcon from '@mui/icons-material/Add'
 import { useCollection } from 'react-firebase-hooks/firestore';
-import { db } from '../firebase';
+import { db, auth } from '../firebase';
+import { useAuthState } from 'react-firebase-hooks/auth'
 
 
 function Sidebar() {
     const [channels] = useCollection(db.collection("rooms"));
+    const [user] = useAuthState(auth);
+
     return (
         <SidebarContainer>
             <SidebarHeader>
@@ -26,7 +29,7 @@ function Sidebar() {
                     <h2>TEAMS OF 4</h2>
                     <h3>
                         <FiberManualRecordIcon />
-                        SeVeRiNcE
+                        
                     </h3>
                 </SidebarInfo>
               <CreateIcon />
@@ -93,6 +96,7 @@ const SidebarHeader = styled.div`
 
 const SidebarInfo = styled.div`
     flex: 1;
+    
 
     > h2 {
         font-size: 15px;

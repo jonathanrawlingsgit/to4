@@ -1,11 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Button } from '@mui/material'
+import { auth, provider } from '../firebase'
 
 function Login() {
+    const signIn = (e) => {
+        e.preventDefault();
+        auth.signInWithPopup(provider).catch((error) =>
+        alert(error.message));
+    };
+
     return (
         <LoginContainer>
             <LoginInnerContainer>
-                <img src="https://aem.dropbox.com/cms/content/dam/dropbox/www/en-us/business/app-integrations/slack/Slack_logo_new.png" alt="" />
+                <img src="https://i.imgur.com/tIzsXkx.png" alt="" />
+                <h1>Sign in to Teams Of 4</h1>
+                <p>to4</p>
+
+                <Button onClick={signIn}>
+                    Sign In with Google
+                </Button>
             </LoginInnerContainer>
         </LoginContainer>
     )
@@ -31,5 +45,12 @@ const LoginInnerContainer = styled.div`
         object-fit: contain;
         height: 100px;
         margin-bottom: 40px;
+    }
+
+    > button {
+        margin-top: 50px;
+        text-transform: inherit !important;
+        background-color: #0a8d48 !important;
+        color: white;
     }
 `;

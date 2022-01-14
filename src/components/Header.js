@@ -4,23 +4,28 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import SearchIcon from '@mui/icons-material/Search';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth } from '../firebase'
 
-    function Header() {
+function Header() {
+    const [user] = useAuthState(auth);
+
         return (
         <HeaderContainer>
-            {/* Left Side */}
             <HeaderLeft>
-              <HeaderAvatar />
+              <HeaderAvatar onClick={() => auth.signOut()} alt={user.displayName} src={user.photoURL}
+                
+              />
               <AccessTimeIcon />
             </HeaderLeft>
 
-            {/* Search Bar */}
+       
             <HeaderSearch>
                 <SearchIcon />
                 <input placeholder='Search for Scrims!' />
             </HeaderSearch>
 
-            {/* Right Side */}
+      
             <HeaderRight>
                 <HelpOutlineIcon />
             </HeaderRight>
@@ -78,6 +83,7 @@ const HeaderContainer = styled.div`
     padding: 10px 0;
     background-color: var(--to4-color);
     color: white;
+    border-bottom: 1px solid white;
     `;
 
 const HeaderLeft = styled.div`
