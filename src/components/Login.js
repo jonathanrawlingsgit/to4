@@ -47,7 +47,7 @@ const LoginContainer = styled.div`
         position: absolute;
         top: 0;
         left: 0;
-        filter: brightness(80%);
+        filter: brightness(90%);
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -56,7 +56,9 @@ const LoginContainer = styled.div`
 `;
 
 const LoginInnerContainer = styled.div`
-    padding: 100px;
+    position: absolute;
+    padding: 200px;
+   
     color: #fff;
     text-shadow: 0 0 10px #9ecaed;
     text-align: center;
@@ -91,14 +93,13 @@ const LoginInnerContainer = styled.div`
         box-shadow: 0 0 7px #9ecaed;
 
         :hover {
-        
         background: rgb(15,24,54);
         background: radial-gradient(circle, rgba(15,24,54,1) 0%, rgba(191,220,255,0.49) 0%);
         cursor: pointer;
         border: 2px solid #BBDAFF;
         opacity: 2;
         text-shadow: 0 0 10px #9ecaed;
-        border-color: #9ecaed;
+       
         color: #fff;
         box-shadow: 0 0 7px #9ecaed;
         transition: .5s ease-in;

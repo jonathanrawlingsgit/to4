@@ -66,8 +66,8 @@ export default Sidebar;
 
 
 const SidebarContainer = styled.div`
-      background: rgb(15,24,54);
-background: linear-gradient(306deg, rgba(15,24,54,1) 0%, rgba(191,220,255,1) 180%);
+        background: rgb(15,24,54);
+        background: linear-gradient(306deg, rgba(15,24,54,1) 0%, rgba(191,220,255,1) 180%);
         opacity: 2;
         text-shadow: 0 0 10px #9ecaed;
         border-color: #9ecaed;
@@ -76,7 +76,8 @@ background: linear-gradient(306deg, rgba(15,24,54,1) 0%, rgba(191,220,255,1) 180
         max-width: 260px;
         min-width: 200px;
         margin-top: 49px;
-        margin-left: 3px;
+        border: 1px double white;
+        border-top: none !important;
 
    > hr {
        margin-top: 10px;

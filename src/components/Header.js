@@ -45,11 +45,11 @@ const HeaderContainer = styled.div`
     justify-content: space-between;
     padding: 10px 0;
     background: rgb(15,24,54);
-background: linear-gradient(306deg, rgba(15,24,54,1) 0%, rgba(191,220,255,1) 170%);
+    background: linear-gradient(306deg, rgba(15,24,54,1) -50%, rgba(191,220,255,1) 170%);
     color: white;
-    border-left: 3px solid black;
+    border: 1px double white;
    
-    opacity: 95%;
+    opacity: 90%;
 
 `
 
@@ -109,7 +109,6 @@ const HeaderLeft = styled.div`
 
 const HeaderAvatar = styled(AccountCircleIcon)`
     cursor: pointer;
-
     :hover {
         opacity: 0.8;
     }
