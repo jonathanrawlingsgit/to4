@@ -66,24 +66,35 @@ export default Sidebar;
 
 
 const SidebarContainer = styled.div`
-   background-color: var(--to4-color);
-   color: white;
-   flex: 0.3;
-   border-top: 1px solid ;
-   max-width: 260px;
-   margin-top: 35px;
+      background: rgb(15,24,54);
+background: linear-gradient(306deg, rgba(15,24,54,1) 0%, rgba(191,220,255,1) 180%);
+        opacity: 2;
+        text-shadow: 0 0 10px #9ecaed;
+        border-color: #9ecaed;
+        color: #fff;
+        flex: 0.3;
+        max-width: 260px;
+        min-width: 200px;
+        margin-top: 49px;
+        margin-left: 3px;
 
    > hr {
        margin-top: 10px;
        margin-bottom: 10px;
-       border: .8px solid #4997df;
+       border-color: #9ecaed;
+        color: #fff;
+        box-shadow: 0 0 7px #9ecaed;
+   flex: 0.3;
    }
 `;
 
 const SidebarHeader = styled.div`
     display: flex;
-    border-bottom: 1px solid lightgreen;
+    border-color: #9ecaed;
+    color: #fff;
+   
     padding: 13px;
+   
 
     > .MuiSvgIcon-root {
         padding: 8px;
@@ -103,16 +114,18 @@ const SidebarInfo = styled.div`
         font-weight: 900;
         margin-bottom: 5px;
         align-items: center;
+        
     }
 
     > h3 {
         display: flex;
         font-weight: 400;
         font-size: 13px;
+        color: white;
     }
 
     > h3 > .MuiSvgIcon-root {
-        font-size: 14px;
+        font-size: 20px;
         margin-top: 1px;
         margin-right: 2px;
         color: lightgreen;

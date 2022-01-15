@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { Button } from '@mui/material'
 import { auth, provider } from '../firebase'
+import BgVideo from './background.mp4'
+
 
 function Login() {
     const signIn = (e) => {
@@ -11,11 +13,16 @@ function Login() {
     };
 
     return (
+
         <LoginContainer>
+            <video autoPlay loop muted>
+                <source src={BgVideo} type="video/mp4" />
+            </video>
             <LoginInnerContainer>
-                <img src="https://i.imgur.com/tIzsXkx.png" alt="" />
-                <h1>Sign in to Teams Of 4</h1>
-                <p>to4</p>
+                
+                <h1>Welcome!</h1>
+                <h4>Sign in below and start finding teams to scrim!</h4>
+               
 
                 <Button onClick={signIn}>
                     Sign In with Google
@@ -27,30 +34,76 @@ function Login() {
 
 export default Login
 
+
 const LoginContainer = styled.div`
-    background-color: #f8f8f8;
     height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: grid;
     place-items: center;
+    
+    > video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        filter: brightness(80%);
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        
+    }
 `;
 
 const LoginInnerContainer = styled.div`
     padding: 100px;
+    color: #fff;
+    text-shadow: 0 0 10px #9ecaed;
     text-align: center;
-    background-color: white;
+    background: rgb(15,24,54);
+    background: radial-gradient(circle, rgba(15,24,54,1) 2%, rgba(191,220,255,0.49) 100%);
     border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    
-    > img {
-        object-fit: contain;
-        height: 100px;
-        margin-bottom: 40px;
+    opacity: 90%;
+    border: 3px solid #BBDAFF;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+
+    > h1 {
+        font-size: 48px;
     }
 
+    > h4 {
+        font-weight: 200;
+        padding-top: 9px;
+    }
+    
     > button {
         margin-top: 50px;
         text-transform: inherit !important;
-        background-color: #0a8d48 !important;
-        color: white;
+        font-weight: 200;
+        cursor: pointer;
+        border: 2px solid #BBDAFF;
+        background: rgb(15,24,54);
+        opacity: 2;
+        text-shadow: 0 0 10px #9ecaed;
+        border-color: #9ecaed;
+        color: #fff;
+        box-shadow: 0 0 7px #9ecaed;
+
+        :hover {
+        
+        background: rgb(15,24,54);
+        background: radial-gradient(circle, rgba(15,24,54,1) 0%, rgba(191,220,255,0.49) 0%);
+        cursor: pointer;
+        border: 2px solid #BBDAFF;
+        opacity: 2;
+        text-shadow: 0 0 10px #9ecaed;
+        border-color: #9ecaed;
+        color: #fff;
+        box-shadow: 0 0 7px #9ecaed;
+        transition: .5s ease-in;
+
+    }
+       
     }
 `;

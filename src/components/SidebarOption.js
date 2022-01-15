@@ -52,10 +52,21 @@ const SidebarOptionContainer = styled.div`
     align-items: center;
     padding-left: 2px;
     cursor: pointer;
+    
 
     :hover {
-        opacity: 0.9;
-        background-color: #012d55;
+        
+        background: rgb(15,24,54);
+        background: radial-gradient(circle, rgba(15,24,54,1) 0%, rgba(191,220,255,0.49) 0%);
+        cursor: pointer;
+        border: 2px solid #BBDAFF;
+        opacity: 2;
+        text-shadow: 0 0 10px #9ecaed;
+        border-color: #9ecaed;
+        color: #fff;
+        box-shadow: 0 0 7px #9ecaed;
+        transition: ease-in;
+
     }
 
     > h3 {

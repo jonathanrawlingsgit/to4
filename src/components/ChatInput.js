@@ -52,7 +52,7 @@ export default ChatInput;
 
 const ChatInputContainer = styled.div`
     border-radius: 20px;
-    
+    background-color: red;
 
     > form {
         position: relative;

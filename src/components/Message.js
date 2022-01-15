@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import ChatAvatar from './default.png'
 
-function Message({ message, timestamp, user, userImage }) {
+function Message({ message, timestamp, user }) {
     return (
+        
         <MessageContainer>
-            <img src={userImage} alt="" />
+            <img src={ChatAvatar} alt="" />
             <MessageInfo>
                 <h4>
                     {user} <span>{new Date(timestamp?.toDate()).toUTCString()}</span>
@@ -21,11 +23,13 @@ const MessageContainer = styled.div`
     display: flex;
     align-items: center;
     padding: 20px;
+    color: white;
+    box-shadow: 1px 1px 4px;
+    background: rgb(15,24,54);
 
     > img {
-        height: 50px;
+        height: 30px;
         border-radius: 8px;
-        border: 1px solid black;
     }
 `;
 

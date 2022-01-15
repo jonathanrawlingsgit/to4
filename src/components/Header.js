@@ -37,6 +37,22 @@ function Header() {
 
 export default Header;
 
+const HeaderContainer = styled.div`
+    display: flex;
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    background: rgb(15,24,54);
+background: linear-gradient(306deg, rgba(15,24,54,1) 0%, rgba(191,220,255,1) 170%);
+    color: white;
+    border-left: 3px solid black;
+   
+    opacity: 95%;
+
+`
+
 const HeaderRight = styled.div`
     flex: 0.3;
     display: flex;
@@ -44,7 +60,7 @@ const HeaderRight = styled.div`
 
     > .MuiSvgIcon-root {
         margin-left: auto;
-        margin-right: 20px;
+        margin-right: 30px;
     }
 `
 
@@ -52,12 +68,15 @@ const HeaderSearch = styled.div`
     flex: 0.4;
     opacity: 1;
     border-radius: 6px;
-    background-color: #054682;
+    background-color: rgb(15,24,54);
+    border-color: #9ecaed;
+    color: #fff;
+    box-shadow: 0 0 7px #9ecaed;
     text-align: center;
     display: flex;
     padding: 0 50px;
-    color: lightgreen;
-    border: 1px lightgreen solid;
+    border: 1px white solid;
+    
 
     > input {
         background-color: transparent;
@@ -68,23 +87,13 @@ const HeaderSearch = styled.div`
         color: white;
     }
     > ::placeholder {
-        color: lightgreen;
+        color: whitesmoke;
         font-weight: 300;
         opacity: .4;
     }
 `;
 
-const HeaderContainer = styled.div`
-    display: flex;
-    position: fixed;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0;
-    background-color: var(--to4-color);
-    color: white;
-    border-bottom: 1px solid white;
-    `;
+
 
 const HeaderLeft = styled.div`
     flex: 0.3;

@@ -10,6 +10,8 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from './firebase'
 import Login from './components/Login'
 import Spinner from 'react-spinkit'
+import BgVideo from './components/background.mp4'
+
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -18,16 +20,9 @@ function App() {
     return (
       <AppLoading>
         <AppLoadingContents>
-          <img 
-          src="https://i.imgur.com/tIzsXkx.png"
-          alt=""
-          />
+        
+        <Spinner name="ball-triangle-path" color="white" />
 
-          <Spinner 
-            name="folding-cube"
-            fadeIn="none"
-          
-          />
         </AppLoadingContents>
       </AppLoading>
     )
@@ -35,25 +30,36 @@ function App() {
 
   return (
     <div className="app">
+     
         <Router>
+          
           {!user ? (
             <Login />
           ) : ( 
             <>
-          
+           
           <Header />
+          
+          
+            
             <AppBody>
+           
               <Sidebar />
+             
                 <Routes>
                   <Route exact path="/" element={<Chat />}
+                  
                  />
                   
                 </Routes>
                 
             </AppBody>
+            
             </>
           )}
         </Router>
+        
+        
     </div>
   );
 }
@@ -62,28 +68,31 @@ function App() {
 export default App;
 
 const AppLoading = styled.div`
-   
+   background-image: url('https://i.imgur.com/2K0XoCE.png');
+   position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(140%);
+
 `;
 
 const AppLoadingContents = styled.div`
     text-align: center;
+    margin-top: 400px;
   padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  > img {
-    height: 100px;
-    padding: 20px;
-    margin-bottom: 40px
-  }
 `;
 
 const AppBody = styled.div`
-  display: flex;
-  
-  
+    display: flex;
 `;
+
+
 
 
